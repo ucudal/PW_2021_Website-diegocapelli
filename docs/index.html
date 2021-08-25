@@ -2,142 +2,237 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>curriculum vitae Diego</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+
+    <title>Diego Capelli | CV</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+ 
 </head>
 
-<body>
-    <section class="center">
+<body class="font-sans antialiased w-full">
+    <div class="container mx-auto max-w-screen-xl">
+        <main id="wrapper" class="flex flex-col sm:flex-row-reverse sm:m-12 shadow-2xl">
+            <div id="sidebar" class="w-full sm:max-w-sm p-8 bg-gradient-to-b from-indigo-300 via-green-300 to-white">
+                <div class="px-2 mb-12">
+                    <img src="foto.jpg" alt="Profile Picture" class="rounded-full w-48 mx-auto mb-2" />
+                    <h1 class="text-center text-3xl font-semibold mb-2">Diego Capelli</h1>
+                    <h2 class="text-center text-xl font-light">Fullstack Developer</h2>
+                </div>
 
-
-        <div style="display: flex">
-
-            <section style="margin-right: 50px;" class="panel1">
-                <h1 id="titulo">CURRÍCULUM VITAE</h1>
-                <section>
-                    <h3 id="personal_data">DATOS PERSONALES</h3>
-                    <ul>
-                        <li >  Diego Martin</li>
-                        <li>Apellidos: Capelli Ortega</li>
-                        <li>Estado civil: soltero</li>
-                        <li>C.I.: 3.816.285-6</li>
-                        <li>Nacionalidad: uruguayo</li>
-                        <li> Domicilio: Joaquín Requena 2130</li>
-                        <li>Teléfono: 099 976 470</li>
-                        <li>E-mail: diegcapelli@gmail.com</li>
-                    </ul>
-                </section>
-
-              
-
-
-               
-                
-
-            </section>
-            <section> <img src="foto.jpg" alt="Girl in a jacket" width="150" height="150" style="margin-left: 70%;">
-                <section>
-                    <h3>ESTUDIOS CURSADOS</h3>
-        
-                    <ul>
-                        <li>2005 – 2015: Ingeneria en computación</li>
-                        Universidad de la República, Facultad de Ingeniería
-                        <li>2021: Ingeneria en informatica UCU</li>
-        
-                    </ul>
-        
-                </section>
-                <section>
-                    <h3>ESTUDIOS COMPLEMENTARIOS</h3>
-        
-                    <ul> <strong>Inglés:</strong>
-        
-                        <li> Nivel First Certificate – Examen de Alianza aprobado en 2013.</li>
-                        <li>Advanced-level course- Curso aprobado en 2014</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>APTITUDES</h3>
-                    <p><br>Cuento con conocimiento de todos los aspectos del ciclo de vida del desarrollo de software,</br>
-                        incluyendo el
-                        análisis de requisitos, el diseño, el desarrollo y la asistencia a la producción.</p>
-        
-                    <div style="display: flex">
-                        <section style="margin-right: 10px;">
-                            <ul>
-                                <li>SVN,GITHUB</li>
-                                <li>HTML ,XML</li>
-                                <li>Javascript/jQuery</br>
-                                <li>PHP</li>
-                                <li>JSP,JSF,Spring mvc</li>
-        
-                            </ul>
-                        </section>
-                        <section>
-                            <ul>
-                                <li>Scrum</li>
-                                <li>Greadle/Maven</li>
-                                <li>Wildfly/Tomcat</li>
-                                <li>Web Services/api rest</li>
-                                <li>java, EJB,Spring Booot</li>
-                            </ul>
-                        </section>
-        
+                <div class="font-light text-lg px-2 mb-12">
+                    <h2 class="text-xl font-semibold mb-4">Contact</h2>
+                    <div>
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <a href="mailto:">diegcapelli@gmail.com</a>
                     </div>
-        
-                </section>
+                    <div>
+                        <ion-icon name="call-outline"></ion-icon>
+                        <a href="tel:">099 976 470</a>
+                    </div>
+                    <div class="flex items-center">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <p style="padding-left: 5px;">Colonia 2097</p>
+                    </div>
 
-            </section>
-           
+                    <div class="flex items-center my-3">
+                        <img src="logo-linkedin.svg" class="inline w-6 mr-4" alt="LinkedIn Logo" />
+                        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+
+                    <div class="flex items-center my-3">
+                        <ion-icon name="planet-outline"></ion-icon>
+                        <a href="#" target="_blank" style="padding-left: 5px;" rel="noopener noreferrer">Portfolio</a>
+                    </div>
+ 
+                </div>
+ 
+                <div class="font-light text-lg px-2 mb-12">
+                    <h2 class="text-xl font-semibold mb-4">APTITUDES</h2>
+                    <ul class="list-none">
+                        <li>
+                            <label for="js-skill">Javascript/jQuery</label>
+                            <progress id="js-skill" max="100" value="70"></progress>
+                        </li>
+                        <li>
+                            <label for="vue-skill">Java,Spring boot</label>
+                            <progress id="vue-skill" max="100" value="80"></progress>
+                        </li>
+                        <li>
+                            <label for="vue-skill">JSP,JSF</label>
+                            <progress id="vue-skill" max="100" value="100"></progress>
+                        </li>
+                        <li>
+                            <label for="react-skill">PHP</label>
+                            <progress id="react-skill" max="100" value="66"></progress>
+                        </li>
+                        <li>
+                            <label for="nextjs-skill">Primefaces</label>
+                            <progress id="nextjs-skill" max="100" value="72"></progress>
+                        </li>
+                        <li>
+                            <label for="eleventy-skill">Oracle</label>
+                            <progress id="eleventy-skill" max="100" value="66"></progress>
+                        </li>
 
 
-        </div>
+                    </ul>
+                </div>
+
+                <div class="font-light text-lg px-2 mb-12">
+                    <h2 class="text-xl font-semibold mb-4">ESTUDIOS</h2>
+                    <h3 class="font-semibold">Ingeneria en computación</h3>
+                    <p>2005 – 2015: UDELAR</p>
+
+                    <h3 class="font-semibold">Ingeneria en informatica</h3>
+                    <p>2021: UCU</p>
+
+                </div>
+
+                <div class="font-light text-lg px-2 mb-12">
+                    <h2 class="text-xl font-semibold mb-4">Languages</h2>
+                    <h3 class="font-semibold">Español</h3>
+                    <p>Nativo</p>
+                    <h3 class="font-semibold">Ingles</h3>
+                    <p>Nivel First Certificate</p>
+                </div>
+            </div>
+            <div class="content w-full p-12">
+                <div id="profile" class="prose">
+                    <h2 class="section-headline">Perfil</h2>
+                    <p>
+                        Soy desarollador de software con conocimiento de todos los aspectos del ciclo de vida del
+                        desarrollo de software,
+                        incluyendo el
+                        análisis de requisitos, el diseño, el desarrollo y la asistencia a producción.
+                    </p>
+
+                </div>
+                <hr class="mt-8 mb-12" />
+                <div id="experience" class="prose">
+                    <h2 class="section-headline">Experiencia</h2>
+                    <div>
+                        <h3>Empresa X</h3>
+                        <section class="mb-6">
+                            <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
+                                Jul.&nbsp;2016:
+                            </div>
+                            <div class="lg:inline-block lg:w-8/12 w-full">
+                                Fullstack Developer
+                            </div>
+                        </section>
+                        <section class="mb-6">
+                            <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
+                                Tareas:
+                            </div>
+                            <div class="lg:inline-block lg:w-8/12 w-full">
+                                Webs basadas en PHP ,Java spring MVC,primafaces,webservices en java (JAX-RS,java
+                                EE),base de datos Oracle SQL,PL/SQL ,
+                                despliegue y generación de aplicación para servidores Wildfly y Apache Tomcat
+                            </div>
+                        </section>
+
+                        <section class="mb-6">
+                            <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
+                                Herramientas:
+                            </div>
+                            <div class="lg:inline-block lg:w-8/12 w-full">
+                                <span class="rounded-xl bg-gray-300 px-3">Primafaces</span>
+                                <span class="rounded-xl bg-gray-300 px-3">Bootstrap</span>
+                                <span class="rounded-xl bg-gray-300 px-3">Docker</span>
+                                <span class="rounded-xl bg-gray-300 px-3">Git</span>
+                                <span class="rounded-xl bg-gray-300 px-3">Bitbucket</span>
+                                <span class="rounded-xl bg-gray-300 px-3">Jira</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <hr class="mt-8 mb-12" />
 
 
-        
-      
-       
+                <div id="projects" class="prose">
+                    <h2 class="section-headline">Mejorar mis habilidades</h2>
+                    <div class="mb-16">
+                        <h4 id="expand-knowledge-headline">
+                            Me gustaria mejorar mis habilidades en varios campos
 
-    </section>
+                        </h4>
+                        <ul>
+                            <li>TypeScript</li>
+
+                            <li>Web Components, e.g. with StencilJS, LitElement</li>
+                            <li>Java Microservicios</li>
+                            <li>Python</li>
+                            <li>Mobile development</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="mt-12 text-center flex justify-center flex-col md:flex-row mx-12">
+        copyright diego capelli 2021
+    </footer>
+
     <style type="text/css">
-        h2 {
-            color: rgb(35, 51, 44);
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        .section-headline {
+            @apply font-bold sm: text-xl uppercase tracking-widest border-green-500 border-l-8 pl-2;
         }
 
-        h1 {
-            color: rgb(35, 51, 44);
-            font-size: 30px;
-            font-weight: bold;
-            border-bottom: medium solid #0a6325;
+        progress {
+            margin-top: 0.5rem;
+            width: 100%;
+            height: 10px;
+            margin-bottom: 0.4rem;
         }
 
-        .center {
-            margin: auto;
-            width: 50%;
-            border: 3px solid rgb(10, 97, 10);
-            padding: 10px;
-        }
-        .panel1{
-           background-color: #9fdfb0;
-
+        progress::-webkit-progress-bar {
+            border-radius: 10px;
+            background-color: #d1d5db;
+            box-shadow: 0 2px 6px #555;
         }
 
-        #titulo{
-             margin-left: 10px;
-
+        progress::-webkit-progress-value {
+            border-radius: 10px 0 0 10px;
+            background-image: linear-gradient(36deg, #d1fae5, #818cf8);
         }
 
-        #personal_data{
-             margin-left: 10px;
-
+        .section-headline {
+            color: #10b981 !important;
         }
 
+        #chrisko-headline::before {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            position: relative;
+            bottom: -8px;
+            content: "";
+            background-image: url("./assets/chrisko-icon.png");
+            background-position: center;
+            background-size: contain;
+            margin-right: 12px;
+            border-radius: 50%;
+        }
+
+        .prose h2 {
+            color: #111827;
+            font-size: 1.5em;
+            font-weight: 700;
+            line-height: 1.3333333;
+            margin-bottom: 1em;
+            margin-top: 2em;
+        }
     </style>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 
