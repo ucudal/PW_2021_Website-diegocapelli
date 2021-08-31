@@ -9,6 +9,7 @@
 
     <title>Diego Capelli | CV</title>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+	
  
 </head>
 
@@ -54,27 +55,27 @@
                     <ul class="list-none">
                         <li>
                             <label for="js-skill">Javascript/jQuery</label>
-                            <progress id="js-skill" max="100" value="70"></progress>
+                            <progress  id="js-skill-JQ" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="vue-skill">Java,Spring boot</label>
-                            <progress id="vue-skill" max="100" value="80"></progress>
+                            <progress id="java-spring" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="vue-skill">JSP,JSF</label>
-                            <progress id="vue-skill" max="100" value="100"></progress>
+                            <progress id="jsp-jsf" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="react-skill">PHP</label>
-                            <progress id="react-skill" max="100" value="66"></progress>
+                            <progress id="php" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="nextjs-skill">Primefaces</label>
-                            <progress id="nextjs-skill" max="100" value="72"></progress>
+                            <progress id="primefaces" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="eleventy-skill">Oracle</label>
-                            <progress id="eleventy-skill" max="100" value="66"></progress>
+                            <progress id="oracle" max="100" value="0"></progress>
                         </li>
 
 
@@ -82,7 +83,7 @@
                 </div>
 
                 <div class="font-light text-lg px-2 mb-12">
-                    <h2 class="text-xl font-semibold mb-4">ESTUDIOS</h2>
+                    <h2 class="text-xl font-semibold mb-4" >ESTUDIOS</h2>
                     <h3 class="font-semibold">Ingeneria en computación</h3>
                     <p>2005 – 2015: UDELAR</p>
 
@@ -101,7 +102,7 @@
             </div>
             <div class="content w-full p-12">
                 <div id="profile" class="prose">
-                    <h2 class="section-headline">Perfil</h2>
+                    <h2 id="titulo" class="section-headline">Perfil</h2>
                     <p>
                         Soy desarollador de software con conocimiento de todos los aspectos del ciclo de vida del
                         desarrollo de software,
@@ -224,15 +225,58 @@
 
         .prose h2 {
             color: #111827;
-            font-size: 1.5em;
+            font-size: 0.5em;
             font-weight: 700;
             line-height: 1.3333333;
             margin-bottom: 1em;
             margin-top: 2em;
         }
     </style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script type="text/javascript">
+	        console.log("se mete");
+			 
+			/*$( "#h1" ).slideDown( 200 );
+            $( "#h2" ).delay( 200 ).slideDown(200);*/
+			
+			$(document).ready(function(){
+				$(".section-headline").animate({ 
+					'font-size' : '1.5em',
+					'opacity': '1'
+				},1000);
+				$("#js-skill-JQ").animate({ 
+					'value' : '70',
+					'opacity': '1'
+				},1000);
+				$("#java-spring").animate({ 
+					'value' : '75',
+					'opacity': '1'
+				},1000);
+				$("#jsp-jsf").animate({ 
+					'value' : '80',
+					'opacity': '1'
+				},1000);
+				$("#primefaces").animate({ 
+					'value' : '78',
+					'opacity': '1'
+				},1000);
+				$("#php").animate({ 
+					'value' : '77',
+					'opacity': '1'
+				},1000);
+				$("#oracle").animate({ 
+					'value' : '70',
+					'opacity': '1'
+				},1000);
+				
+				
+			});
+
+		 
+	</script>
+	
 
 </body>
 
