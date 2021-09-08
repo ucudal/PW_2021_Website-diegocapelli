@@ -5,16 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'"    
+    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*'",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style.css --jit",
+    "tailwind:watch": "npm run tailwind -- --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://diegocapelli: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@github.com/ucudal/PW_2021_Website-diegocapelli.git"
   },
-  "author": "",
+  "author": "Diego Capelli",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ucudal/PW_2021_Website-diegocapelli/issues"
   },
-  "homepage": "https://github.com/ucudal/PW_2021_Website-diegocapelli#readme"
+  "homepage": "https://github.com/ucudal/PW_2021_Website-diegocapelli#readme",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.11"
+  }
 }
