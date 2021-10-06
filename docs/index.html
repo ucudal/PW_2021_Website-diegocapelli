@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -8,58 +8,63 @@
  
 
     <title>Diego Capelli | CV</title>
-    <link rel="stylesheet" href="style.css">
-	
- 
+    <link rel="stylesheet" href="style.css" type="text/css" title="style">
+
+
 </head>
 
-<body class="font-sans antialiased w-full">
+<body class="dark:font-sans antialiased w-full dark:bg-black">
     <div class="container mx-auto max-w-screen-xl">
+       
         <main id="wrapper" class="flex flex-col sm:flex-row-reverse sm:m-12 shadow-2xl">
-            <div id="sidebar" class="w-full sm:max-w-sm p-8 bg-gradient-to-b from-indigo-300 via-green-300 to-white">
+           
+            <div id="sidebar"
+                class="w-full sm:max-w-sm p-8 bg-gradient-to-b from-indigo-300 dark:bg-black via-green-300   to-white ">
+                
                 <div class="px-2 mb-12">
                     <img src="foto.jpg" alt="Profile Picture" class="rounded-full w-48 mx-auto mb-2" />
                     <h1 class="text-center text-3xl font-semibold mb-2">Diego Capelli</h1>
-                     
+
                 </div>
 
-                <div class="font-light text-lg px-2 mb-12 prose">
+                <div class="font-light text-lg px-2 mb-12">
                     <h2 class="text-xl font-semibold mb-4">Contact</h2>
                     <div>
                         <ion-icon name="mail-outline"></ion-icon>
-                        <a href="mailto:">diegcapelli@gmail.com</a>
+                        <a href="mailto:" class="hover:text-green-900 dark:bg-black">diegcapelli@gmail.com</a>
                     </div>
                     <div>
                         <ion-icon name="call-outline"></ion-icon>
                         <a href="tel:">099 976 470</a>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center  ">
                         <ion-icon name="home-outline"></ion-icon>
                         <p style="padding-left: 5px;">Colonia 2097</p>
                     </div>
 
-                    <div class="flex items-center my-3">
+                    <div class="flex items-center ">
                         <img src="logo-linkedin.svg" class="inline w-6 mr-4" alt="LinkedIn Logo" />
-                        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="#" class="hover:text-green-900" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
 
-                    <div class="flex items-center my-3">
+                    <div class="flex items-center ">
                         <ion-icon name="planet-outline"></ion-icon>
-                        <a href="#" target="_blank" style="padding-left: 5px;" rel="noopener noreferrer">Portfolio</a>
+                        <a href="#" target="_blank" style="padding-left: 5px;" class="hover:text-green-900"
+                            rel="noopener noreferrer">Portfolio</a>
                     </div>
- 
+
                 </div>
- 
+
                 <div class="font-light text-lg px-2 mb-12">
                     <h2 class="text-xl font-semibold mb-4">APTITUDES</h2>
                     <ul class="list-none">
                         <li>
                             <label for="js-skill">Javascript/jQuery</label>
-                            <progress  id="js-skill-JQ" max="100" value="0"></progress>
+                            <progress id="js-skill-JQ" max="100" value="0"></progress>
                         </li>
                         <li>
                             <label for="vue-skill">Java,Spring boot</label>
-                            <progress id="java-spring" max="100" value="0"></progress>
+                            <progress id="java-spring" max="100" value="10"></progress>
                         </li>
                         <li>
                             <label for="vue-skill">JSP,JSF</label>
@@ -83,7 +88,7 @@
                 </div>
 
                 <div class="font-light text-lg px-2 mb-12">
-                    <h2 class="text-xl font-semibold mb-4" >ESTUDIOS</h2>
+                    <h2 class="text-xl font-semibold mb-4">ESTUDIOS</h2>
                     <h3 class="font-semibold">Ingeneria en computación</h3>
                     <p>2005 – 2015: UDELAR</p>
 
@@ -101,6 +106,7 @@
                 </div>
             </div>
             <div class="content w-full p-12">
+                <button type="button" class="button cancel">Registrarse!</button>
                 <div id="profile" class="prose">
                     <h2 id="titulo" class="section-headline">Perfil</h2>
                     <p>
@@ -140,7 +146,7 @@
                                 Herramientas:
                             </div>
                             <div class="lg:inline-block lg:w-8/12 w-full">
-                                <span class="rounded-xl bg-gray-300 px-3">Primafaces</span>
+                                <span class="rounded-xl bg-gray-300 px-3 ">Primafaces</span>
                                 <span class="rounded-xl bg-gray-300 px-3">Bootstrap</span>
                                 <span class="rounded-xl bg-gray-300 px-3">Docker</span>
                                 <span class="rounded-xl bg-gray-300 px-3">Git</span>
@@ -171,58 +177,45 @@
                         </ul>
                     </div>
                 </div>
+
+                <div id="registerUsers" class="prose">
+                    <h2 class="visitors">Visitantes</h2>
+                    <div class="mb-16">
+                        <label for="visitorUserName">Nombre:</label>
+                        <input type="text" id="visitorUserName" style="border: 1px solid black;"><br><br>
+                        <button id ="visitorSearch" class="button cancel">Buscar</button>
+                        <div class="mb-16">
+
+                    <div class="visitorBox">
+                        <ul id="visitorList"  style="display:none;">
+                            
+                            <li id="visitorName"></li>
+
+                            <li id="visitorLastName"> </li>
+                            <li id="visitorEmail"></li>
+                            <li id="visitorPhone"></li>
+                            <li id="visitorMotive"></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+
+
             </div>
         </main>
     </div>
     <footer class="mt-12 text-center flex justify-center flex-col md:flex-row mx-12">
         copyright diego capelli 2021
     </footer>
- 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+     
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script type="text/javascript">
-	        console.log("se mete");
-			 
-			/*$( "#h1" ).slideDown( 200 );
-            $( "#h2" ).delay( 200 ).slideDown(200);*/
-			
-			$(document).ready(function(){
-				$(".section-headline").animate({ 
-					'font-size' : '1.5em',
-					'opacity': '1'
-				},1000);
-				$("#js-skill-JQ").animate({ 
-					'value' : '70',
-					'opacity': '1'
-				},1000);
-				$("#java-spring").animate({ 
-					'value' : '75',
-					'opacity': '1'
-				},1000);
-				$("#jsp-jsf").animate({ 
-					'value' : '80',
-					'opacity': '1'
-				},1000);
-				$("#primefaces").animate({ 
-					'value' : '78',
-					'opacity': '1'
-				},1000);
-				$("#php").animate({ 
-					'value' : '77',
-					'opacity': '1'
-				},1000);
-				$("#oracle").animate({ 
-					'value' : '70',
-					'opacity': '1'
-				},1000);
-				
-				
-			});
-
-		 
-	</script>
-	
+ 
+<script src="script.js"></script>
 
 </body>
 

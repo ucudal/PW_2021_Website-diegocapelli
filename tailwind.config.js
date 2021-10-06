@@ -1,12 +1,13 @@
 module.exports = {
   purge: [
-    "doc/*.html"
+    "doc/*.html","doc/*.js"
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      
       colors: {
-         diegoCV: '#eb7c15;', 
+         
       },
     },
   },
