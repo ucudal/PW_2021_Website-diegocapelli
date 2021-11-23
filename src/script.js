@@ -61,7 +61,6 @@ function addClient() {
         else {
             var re = new RegExp('^\\S+@\\S+$');
             var rePhone = new RegExp('^\\d*$');
-            console.log("antes de validar regex");
             if (!rePhone.test(phoneView)) {
                 var alert_2 = document.getElementById('alert_id');
                 alert_2.textContent = "Formato de celular incorrecto";
@@ -70,7 +69,6 @@ function addClient() {
                 return 'Numero de celular incorrecto';
             }
             else {
-                console.log(rePhone);
                 if (emailView != '') {
                     if (!re.test(emailView)) {
                         var alert_3 = document.getElementById('alert_id');
@@ -91,7 +89,6 @@ function addClient() {
         return response.json();
     })
         .then(function (data) {
-        console.log(data);
         var alert = document.getElementById('alert_id');
         alert.textContent = data;
         alert.style = "display: block;color: red";
@@ -99,7 +96,6 @@ function addClient() {
             alert.style = "display: block;color: green";
         }
     })["catch"](function (data) {
-        console.log("respuesta ws");
         var alert = document.getElementById('alert_id');
         alert.textContent = "Error interno,por favor intente mas tarde";
         alert.style = "display: block;color: red";
@@ -252,7 +248,6 @@ function closeModalHandler() {
     backdrop = null;
 }
 function cleanModalHandler() {
-    console.log("clean");
     var name = document.getElementById('name');
     name.value = "";
     var lastname = document.getElementById('lastname');

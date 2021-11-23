@@ -92,7 +92,7 @@ function addClient() {
 
                 var re = new RegExp('^\\S+@\\S+$');
                 var rePhone = new RegExp('^\\d*$');
-                console.log("antes de validar regex");
+                
                 if (!rePhone.test(phoneView)) {
                     let alert: any = document.getElementById('alert_id');
                     alert.textContent = "Formato de celular incorrecto";
@@ -102,7 +102,7 @@ function addClient() {
                     return 'Numero de celular incorrecto';
 
                 } else {
-                    console.log(rePhone);
+                    
                     if (emailView!='') {
 
 
@@ -132,7 +132,7 @@ function addClient() {
 
         )
         .then(data => {
-            console.log(data);
+           
             let alert: any = document.getElementById('alert_id');
             alert.textContent = data;
             alert.style = "display: block;color: red";
@@ -142,8 +142,7 @@ function addClient() {
 
         })
         .catch(data => {
-            console.log("respuesta ws");
-
+             
             let alert: any = document.getElementById('alert_id');
             alert.textContent = "Error interno,por favor intente mas tarde";
             alert.style = "display: block;color: red";
@@ -155,13 +154,13 @@ button.addEventListener('click', showModalHandler);
 
 function showModalHandler() {
 
-    if (modal) {
-
+    if (modal) { 
         return;
     }
     buildForm();
 
 }
+
 
 
 class ClientData {
@@ -360,7 +359,7 @@ function closeModalHandler() {
 
 }
 function cleanModalHandler() {
-    console.log("clean");
+    
     let name = document.getElementById('name') as HTMLInputElement;
     name.value = "";
     let lastname = document.getElementById('lastname') as HTMLInputElement;
