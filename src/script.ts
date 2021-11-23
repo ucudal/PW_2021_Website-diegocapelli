@@ -47,21 +47,21 @@ function addClient() {
 
     var body = document.getElementsByTagName('body')[0];
     var addLoading = function () {
-      
-      setTimeout(function () {
-       body.className = body.className.replace(/loading2/, 'loading');
-       
-      }, 3);
-      setTimeout(function () {
-        body.className = body.className.replace(/loading/, 'loading2');
-        
-       }, 500);
-       
+
+        setTimeout(function () {
+            body.className = body.className.replace(/loading2/, 'loading');
+
+        }, 3);
+        setTimeout(function () {
+            body.className = body.className.replace(/loading/, 'loading2');
+
+        }, 500);
+
     };
-   
-  
+
+
     addLoading();
-    var returnCode=200;
+    var returnCode = 200;
     fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/enviar-formulario',
         {
             method: "POST",
@@ -72,16 +72,16 @@ function addClient() {
             body: JSON.stringify(data),
 
         }).then(response => {
-         
+
             let emailView: string = (<HTMLInputElement>document.getElementById('email')).value;
             let phoneView: string = (<HTMLInputElement>document.getElementById('phone')).value;
-          
+
             // var re = new RegExp('/\S+@\S+\.\S+$/');
             //var re = new RegExp('^\\S+@\\S+$');
 
-            var re = '^\\S+@\\S+$';
-            let nameView = (<HTMLInputElement>document.getElementById('name')).value;
             
+            let nameView = (<HTMLInputElement>document.getElementById('name')).value;
+
             if (nameView == '') {
                 let alert: any = document.getElementById('alert_id');
                 alert.textContent = "El campo Nombre es obligatorio";
@@ -89,56 +89,65 @@ function addClient() {
                 let vs: any = document.getElementById('visitorList');
                 vs.style = "display:block";
             } else {
-
+                
+                var re = new RegExp('^\\S+@\\S+$');
                 var rePhone = new RegExp('^\\d*$');
+                console.log("antes de validar regex");
                 if (!rePhone.test(phoneView)) {
                     let alert: any = document.getElementById('alert_id');
                     alert.textContent = "Formato de celular incorrecto";
                     alert.style = "display: block;color: red";
+                    returnCode = 400;
+
+                    return 'Numero de celular incorrecto';
 
                 } else {
-                    console.log("agrega");
-                    var client: any = new ClientData();
-                    listOfClients.push(client);
+                    if (!re.test(emailView)) {
+                        let alert: any = document.getElementById('alert_id');
+                        alert.textContent = "Formato de mail incorrecto";
+                        alert.style = "display: block;color: red";
+                        returnCode = 400;
 
-                    localStorage.setItem("users", JSON.stringify(listOfClients));
-                    console.log("response");
-                    
-                    
-                    //var rt ={code:response.status,return:res};
-                    //return rt;
+                        return 'Numero de celular incorrecto';
+
+                    } else { 
+
+                        var client: any = new ClientData();
+                        listOfClients.push(client);
+                        localStorage.setItem("users", JSON.stringify(listOfClients));
+                    }
                 }
 
             }
-            console.log("retorna error");
-            returnCode=response.status;
-            return  response.json();
+
+            returnCode = response.status;
+            return response.json();
 
         }
 
         )
-        .then(data => { 
+        .then(data => {
             console.log(data);
             let alert: any = document.getElementById('alert_id');
             alert.textContent = data;
             alert.style = "display: block;color: red";
-            if (returnCode==200){
+            if (returnCode == 200) {
                 alert.style = "display: block;color: green";
             }
-              
+
         })
-        .catch(data => { 
+        .catch(data => {
             console.log("respuesta ws");
-             
+
             let alert: any = document.getElementById('alert_id');
-            alert.textContent ="Error interno,por favor intente mas tarde";
-            alert.style = "display: block;color: red"; 
+            alert.textContent = "Error interno,por favor intente mas tarde";
+            alert.style = "display: block;color: red";
         })
 
 }
- 
+
 button.addEventListener('click', showModalHandler);
- 
+
 function showModalHandler() {
 
     if (modal) {
@@ -166,16 +175,16 @@ var listOfClients: any = [];
 
 function submitModalHandler() {
 
-    let emailView:string = (<HTMLInputElement>document.getElementById('email')).value;
- 
+    let emailView: string = (<HTMLInputElement>document.getElementById('email')).value;
+
     var re = new RegExp(/^\S+@\S+\.\S+$/);
     //var re = new RegExp('^\\S+@\\S+$');
     if (emailView != '') {
         if (!re.test(emailView)) {
-            let alert:any = document.getElementById('alert_id');
+            let alert: any = document.getElementById('alert_id');
             alert.textContent = "Error mail incorrecto";
             alert.style = "display: block;color: red";
-            let vs:any = document.getElementById('visitorList');
+            let vs: any = document.getElementById('visitorList');
             vs.style = "display:block";
         } else {
 
@@ -215,29 +224,29 @@ function buildForm() {
     form.action = "index.html";
 
 
-    const LabelName:any = document.createElement('label');
+    const LabelName: any = document.createElement('label');
     LabelName.textContent = 'Nombre';
     LabelName.style = "display: block";
 
-    const inputName:any = document.createElement('input');
+    const inputName: any = document.createElement('input');
     inputName.id = 'name';
     inputName.name = 'name';
     inputName.required = "true";
     inputName.style = "display: block";
 
-    const LabellastName:any = document.createElement('label');
+    const LabellastName: any = document.createElement('label');
     LabellastName.textContent = 'Apellido';
     LabellastName.style = "display: block";
-    const inputLastName:any = document.createElement('input');
+    const inputLastName: any = document.createElement('input');
     inputLastName.id = 'lastname';
     inputLastName.name = 'lastname';
     inputLastName.style = "display: block";
 
 
-    const LabelEmail:any = document.createElement('label');
+    const LabelEmail: any = document.createElement('label');
     LabelEmail.textContent = 'Email';
     LabelEmail.style = "display: block";
-    const inputEmail:any = document.createElement('input');
+    const inputEmail: any = document.createElement('input');
     inputEmail.id = 'email';
     inputEmail.name = 'email';
     inputEmail.style = "display: block";
@@ -245,19 +254,19 @@ function buildForm() {
 
 
 
-    const LabelPhone:any = document.createElement('label');
+    const LabelPhone: any = document.createElement('label');
     LabelPhone.textContent = 'Celular';
     LabelPhone.style = "display: block";
-    const inputPhone:any = document.createElement('input');
+    const inputPhone: any = document.createElement('input');
     inputPhone.id = 'phone';
     inputPhone.name = 'phone';
     inputPhone.style = "display: block";
 
 
-    const Labelmotive:any = document.createElement('label');
+    const Labelmotive: any = document.createElement('label');
     Labelmotive.textContent = 'Motivo';
     Labelmotive.style = "display: block";
-    const inputMotive:any = document.createElement('textarea');
+    const inputMotive: any = document.createElement('textarea');
     inputMotive.id = 'motive';
     inputMotive.name = 'motive';
     inputMotive.style = "display: block";
@@ -273,12 +282,12 @@ function buildForm() {
 
     const modalCancelAction = document.createElement('button');
     modalCancelAction.textContent = 'Cancelar';
-    modalCancelAction.className = 'button cancel';
+    modalCancelAction.className = 'button hover:bg-yellow-700 cancel';
     modalCancelAction.addEventListener('click', closeModalHandler);
 
     const modalConfirmAction = document.createElement('button');
     modalConfirmAction.textContent = 'Confirmar';
-    modalConfirmAction.className = 'button';
+    modalConfirmAction.className = 'button hover:bg-green-700';
     modalConfirmAction.type = "submit";
     //modalConfirmAction.value = "Submit";
     modalConfirmAction.addEventListener('click', submitModalHandler);
@@ -286,9 +295,9 @@ function buildForm() {
 
     const modalCleanAction = document.createElement('button');
     modalCleanAction.textContent = 'Resetear';
-    modalCleanAction.className = 'button';
+    modalCleanAction.className = 'button hover:bg-green-700';
 
-    const alertMessage:any = document.createElement('label');
+    const alertMessage: any = document.createElement('label');
     alertMessage.textContent = '';
     alertMessage.style = "display: none";
     alertMessage.className = "TextCenter";
@@ -347,19 +356,19 @@ function closeModalHandler() {
 }
 function cleanModalHandler() {
     console.log("clean");
-    let name = document.getElementById('name') as HTMLInputElement; 
+    let name = document.getElementById('name') as HTMLInputElement;
     name.value = "";
-    let lastname = document.getElementById('lastname') as HTMLInputElement; 
+    let lastname = document.getElementById('lastname') as HTMLInputElement;
     lastname.value = "";
-    let email = document.getElementById('email') as HTMLInputElement; 
+    let email = document.getElementById('email') as HTMLInputElement;
     email.value = "";
- 
-    let phone = document.getElementById('phone') as HTMLInputElement; 
+
+    let phone = document.getElementById('phone') as HTMLInputElement;
     phone.value = "";
-    let motive = document.getElementById('motive') as HTMLInputElement; 
+    let motive = document.getElementById('motive') as HTMLInputElement;
     motive.value = "";
-   
-    let alert:any = document.getElementById('alert_id');
+
+    let alert: any = document.getElementById('alert_id');
     alert.style = "display: none;color: green";
 
 }

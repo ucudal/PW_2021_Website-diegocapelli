@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="content w-full p-12  container mx-auto">
-                <button type="button" class="button cancel">Registrarse!</button>
+                <button type="button" class="button hover:bg-yellow-700 cancel">Registrarse!</button>
                 <div id="profile" class="prose">
                     <h2 id="titulo" style="font-size: 20px;" class="section-headline">Perfil</h2>
                     <p>
@@ -120,7 +120,7 @@
                 <hr class="mt-8 mb-12" />
                 <div id="experience" class="prose">
                     <!--<h2  style="font-size: 20px;" class="section-headline">Experiencia</h2>-->
-                    <button id="loadExp" class="button cancel">Experiencia</button>
+                    <button id="loadExp" class="button hover:bg-yellow-700 cancel">Experiencia</button>
                     <div style="padding-top: 25px;">
                         <div id="exp">
                         </div>
@@ -169,7 +169,7 @@
                         <input type="text" id="visitorUserName" style="border: 1px solid black;"><br><br>
                         <label id="errorSearch" style="color:red"></label>
                         <div style="padding-top: 25px;">
-                            <button id="visitorSearch" class="button cancel">Buscar</button>
+                            <button id="visitorSearch" class="button hover:bg-yellow-700 cancel">Buscar</button>
                         </div>
                         <div class="mb-16">
 
@@ -201,7 +201,7 @@
     <script>
 
         var body = document.getElementsByTagName('body')[0];
-        var removeLoading = function () {console.log("se mete aca");
+        var removeLoading = function () { 
             setTimeout(function () {
                 body.className = body.className.replace(/loading/, 'loading2');
             }, 300);
