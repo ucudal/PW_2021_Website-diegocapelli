@@ -90,19 +90,22 @@ function addClient() {
                 }
 
             }
-            return result;
+            
+            return  response.json();
 
         }
 
         )
         .then(data => { 
+            
             let alert: any = document.getElementById('alert_id');
             alert.textContent = data;
             alert.style = "display: block;color: green"; 
         })
         .catch(data => { 
+             
             let alert: any = document.getElementById('alert_id');
-            alert.textContent = "Error interno, por favor intente mas tarde";
+            alert.textContent = data.json();
             alert.style = "display: block;color: red"; 
         })
 

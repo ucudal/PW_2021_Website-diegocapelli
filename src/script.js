@@ -63,15 +63,18 @@ function addClient() {
                 return result;
             }
         }
-        return result;
+        console.log(response.json());
+        return response.json();
     })
         .then(function (data) {
+        console.log(data);
         var alert = document.getElementById('alert_id');
         alert.textContent = data;
         alert.style = "display: block;color: green";
     })["catch"](function (data) {
+        console.log("error acacaca en chact");
         var alert = document.getElementById('alert_id');
-        alert.textContent = "Error interno, por favor intente mas tarde";
+        alert.textContent = data.json();
         alert.style = "display: block;color: red";
     });
 }
