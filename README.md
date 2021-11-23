@@ -1,8 +1,8 @@
 <p align="center"><img src="/art/header.png?1" alt="spruce header"></p>
 
-> ✨ Help support the maintenance of this package by [sponsoring me](https://github.com/sponsors/ryangjchandler).
+> ✨ Soporte de ayuda para este paquete [sponsoring me](https://github.com/sponsors/ryangjchandler).
 
-# 🌲 Spruce
+# Plugin 🌲 Spruce
 
 
 Una capa de gestión de estado global ligera para Alpine.js
@@ -14,7 +14,7 @@ Una capa de gestión de estado global ligera para Alpine.js
 > Con el lanzamiento de [Alpine 3.x](https://github.com/alpinejs/alpine-next), Spruce ha sido reemplazado por un asistente de [`$store`](https://alpinejs.dev/magics/store) ayuda,asi mismo [`Alpine.store`](https://alpinejs.dev/magics/store).
  Este paquete seguirá siendo compatible con Alpine 2.x, pero solo con las versiones de seguridad ❤️
 
-## Documentation
+## Documentacion
 
 Para aprender mas de Spruce y como usarlo, por favor ir a [official documentation](https://spruce.ryangjchandler.co.uk).
 
@@ -30,7 +30,7 @@ Please refer to [SECURITY.md](SECURITY.md) for more information.
 
 
 
-# Alpine.js devtools
+# Plugin Alpine.js devtools
 
 ![Screenshot of Alpine.js devtools](docs/devtools-only.png)
 
@@ -80,7 +80,7 @@ de los atributos, in order: `id`, `name`, `aria-label`, `x-data` (the function n
 A devtools simulator se puede utilizar para correr test y tener un flujo de trabajo.
 
 
-### Testing
+###  Testing
 
 Tenemos 2 niveles de testing en el projecto:
 
@@ -91,16 +91,16 @@ Tenemos 2 niveles de testing en el projecto:
     -   El comando para correr Cypress UI es `npm run cy:open`
  
 
-# Magic Helpers
+# Plugin Magic Helpers
 
 Una coleccion de magic properties and helper functions para usar con [Alpine.js](https://github.com/alpinejs/alpine) version 2
 
 
 
-## About
+## Prestaciones
 
-Adds the following magic helpers to use with Alpine JS.
-| Magic Helpers | Description |
+Agregar los siguientes magic helpers para usar con Alpine JS.
+| Magic Helpers | Descripcion |
 | --- | --- |
 | [`$component/$parent`](#component) | Nativo acceso y actualizaciion de data de otro componente o padre del componente. |
 | [`$fetch/$get/$post`](#fetch) | Usando Axios, fetch JSON desde una fuente externa.  |
@@ -112,12 +112,12 @@ Adds the following magic helpers to use with Alpine JS.
 | [`$undo`](#undo) |  Detectar cambios de estado dentro de tus componentes. |
 
 
- ***More to come!***
+ ***Mas por venir!***
 
 
 
 
-# Alpine.js Test Utils
+# Plugin Alpine.js Test Utils
 
 Utilidades para testing de componentes Alpine.js .
 
@@ -125,30 +125,30 @@ Utilidades para testing de componentes Alpine.js .
 
 Esto quiere decir que puedes usar AVA, Tape, Mocha, Jest o cualquier otra libreria de testing que quieras.
 
-This project is not officially affiliated with Alpine.js, it's maintained by community members. For any feedback, questions or issues, please create [issues](https://github.com/HugoDF/alpine-test-utils/issues) and [pull requests](https://github.com/HugoDF/alpine-test-utils/blob/master/README.md#contributing) or merely upvote or comment on existing issues or pull requests.
+Este projecto no esta oficialmente en Alpine.js, es mantenido por miembros de la comunidad. Por feedback, preguntas, por favor crear [issues](https://github.com/HugoDF/alpine-test-utils/issues) y [pull requests](https://github.com/HugoDF/alpine-test-utils/blob/master/README.md#contributing) .
 
 
-# Pinecone Router
+#Plugin  Pinecone Router
 
 La extencion client-side router para Alpine.js.
 
-## Compatibility
+## Compatibilidad
 
 [Currently works with Alpine.js v2 only](https://github.com/pinecone-router/router/issues/12)
 
-## About
+## Funcionalidad
 
 Un enrutador del lado del cliente fácil de usar pero repleto de funciones para usar con Alpine.js.
 
 Puede ser usado con:
 
 -   Handle routes & process route variables.
--   Use magic helper `$router` ayuda a mostrar elementos dinamicaente  etc. dentro de Alpine.js Components.
+-   Usa magic helper `$router` ayuda a mostrar elementos dinamicaente  etc. dentro de Alpine.js Components.
 -   muchos mas usos [middlewares](#middlewares)!.
 
 
 
-## Other
+## Comunidad
 
 * [Alpine.js Weekly - Newsletter](https://alpinejs.codewithhugo.com/newsletter)
 * [Alpine.js Discord Community](https://discord.gg/CGmj5nq)

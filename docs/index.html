@@ -5,22 +5,22 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
 
+f
     <title>Diego Capelli | CV</title>
     <link rel="stylesheet" href="style.css" type="text/css" title="style">
 
 
 </head>
 
-<body class="dark:font-sans antialiased w-full dark:bg-black">
+<body class="dark:font-sans antialiased w-full dark:bg-black" >
     <div class="container mx-auto max-w-screen-xl">
-       
+
         <main id="wrapper" class="flex flex-col sm:flex-row-reverse sm:m-12 shadow-2xl">
-           
+
             <div id="sidebar"
                 class="w-full sm:max-w-sm p-8 bg-gradient-to-b from-indigo-300 dark:bg-black via-green-300   to-white ">
-                
+
                 <div class="px-2 mb-12">
                     <img src="foto.jpg" alt="Profile Picture" class="rounded-full w-48 mx-auto mb-2" />
                     <h1 class="text-center text-3xl font-semibold mb-2">Diego Capelli</h1>
@@ -105,10 +105,10 @@
                     <p>Nivel First Certificate</p>
                 </div>
             </div>
-            <div class="content w-full p-12">
+            <div class="content w-full p-12  container mx-auto">
                 <button type="button" class="button cancel">Registrarse!</button>
                 <div id="profile" class="prose">
-                    <h2 id="titulo" class="section-headline">Perfil</h2>
+                    <h2 id="titulo"  style="font-size: 20px;" class="section-headline">Perfil</h2>
                     <p>
                         Soy desarollador de software con conocimiento de todos los aspectos del ciclo de vida del
                         desarrollo de software,
@@ -119,28 +119,12 @@
                 </div>
                 <hr class="mt-8 mb-12" />
                 <div id="experience" class="prose">
-                    <h2 class="section-headline">Experiencia</h2>
-                    <div>
-                        <h3>Empresa X</h3>
-                        <section class="mb-6">
-                            <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
-                                Jul.&nbsp;2016:
-                            </div>
-                            <div class="lg:inline-block lg:w-8/12 w-full">
-                                Fullstack Developer
-                            </div>
-                        </section>
-                        <section class="mb-6">
-                            <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
-                                Tareas:
-                            </div>
-                            <div class="lg:inline-block lg:w-8/12 w-full">
-                                Webs basadas en PHP ,Java spring MVC,primafaces,webservices en java (JAX-RS,java
-                                EE),base de datos Oracle SQL,PL/SQL ,
-                                despliegue y generación de aplicación para servidores Wildfly y Apache Tomcat
-                            </div>
-                        </section>
-
+                    <!--<h2  style="font-size: 20px;" class="section-headline">Experiencia</h2>-->
+                    <button id="loadExp" class="button cancel" >Experiencia</button>
+                    <div  style="padding-top: 25px;">
+                        <div id="exp">
+                        </div>
+                    
                         <section class="mb-6">
                             <div class="lg:inline-block lg:w-3/12 lg:align-top italic mb-2">
                                 Herramientas:
@@ -160,7 +144,7 @@
 
 
                 <div id="projects" class="prose">
-                    <h2 class="section-headline">Mejorar mis habilidades</h2>
+                    <h2 class="section-headline" style="font-size: 20px;">Mejorar mis habilidades</h2>
                     <div class="mb-16">
                         <h4 id="expand-knowledge-headline">
                             Me gustaria mejorar mis habilidades en varios campos
@@ -179,43 +163,40 @@
                 </div>
 
                 <div id="registerUsers" class="prose">
-                    <h2 class="visitors">Visitantes</h2>
+                    <h2  style="font-size: 20px;" class="visitors">Visitantes</h2>
                     <div class="mb-16">
                         <label for="visitorUserName">Nombre:</label>
                         <input type="text" id="visitorUserName" style="border: 1px solid black;"><br><br>
-                        <button id ="visitorSearch" class="button cancel">Buscar</button>
+                        <label id="errorSearch" style="color:red" ></label>
+                        <div style="padding-top: 25px;">
+                            <button id="visitorSearch" class="button cancel">Buscar</button>
+                        </div>
                         <div class="mb-16">
 
-                    <div class="visitorBox">
-                        <ul id="visitorList"  style="display:none;">
-                            
-                            <li id="visitorName"></li>
-
-                            <li id="visitorLastName"> </li>
-                            <li id="visitorEmail"></li>
-                            <li id="visitorPhone"></li>
-                            <li id="visitorMotive"></li>
-                        </ul>
-
+                            <div class="visitorBox">
+                                <ul id="visitorList" style="display:none;">
+                                    <li id="visitorName"></li>
+                                    <li id="visitorLastName"> </li>
+                                    <li id="visitorEmail"></li>
+                                    <li id="visitorPhone"></li>
+                                    <li id="visitorMotive"></li>
+                                </ul>
+                            </div>
+                        </div>
 
                     </div>
-                </div>
-
-
-
-
-            </div>
         </main>
     </div>
     <footer class="mt-12 text-center flex justify-center flex-col md:flex-row mx-12">
         copyright diego capelli 2021
     </footer>
-     
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
- 
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
+    <script src="src/script.js"></script>
 
 </body>
 
