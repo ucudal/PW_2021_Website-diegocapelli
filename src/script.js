@@ -70,12 +70,15 @@ function addClient() {
                 return 'Numero de celular incorrecto';
             }
             else {
-                if (!re.test(emailView)) {
-                    var alert_3 = document.getElementById('alert_id');
-                    alert_3.textContent = "Formato de mail incorrecto";
-                    alert_3.style = "display: block;color: red";
-                    returnCode = 400;
-                    return 'Numero de celular incorrecto';
+                console.log(rePhone);
+                if (emailView != '') {
+                    if (!re.test(emailView)) {
+                        var alert_3 = document.getElementById('alert_id');
+                        alert_3.textContent = "Formato de mail incorrecto";
+                        alert_3.style = "display: block;color: red";
+                        returnCode = 400;
+                        return 'Formato de mail incorrecto';
+                    }
                 }
                 else {
                     var client = new ClientData();

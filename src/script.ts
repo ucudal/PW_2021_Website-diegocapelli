@@ -79,7 +79,7 @@ function addClient() {
             // var re = new RegExp('/\S+@\S+\.\S+$/');
             //var re = new RegExp('^\\S+@\\S+$');
 
-            
+
             let nameView = (<HTMLInputElement>document.getElementById('name')).value;
 
             if (nameView == '') {
@@ -89,7 +89,7 @@ function addClient() {
                 let vs: any = document.getElementById('visitorList');
                 vs.style = "display:block";
             } else {
-                
+
                 var re = new RegExp('^\\S+@\\S+$');
                 var rePhone = new RegExp('^\\d*$');
                 console.log("antes de validar regex");
@@ -102,15 +102,20 @@ function addClient() {
                     return 'Numero de celular incorrecto';
 
                 } else {
-                    if (!re.test(emailView)) {
-                        let alert: any = document.getElementById('alert_id');
-                        alert.textContent = "Formato de mail incorrecto";
-                        alert.style = "display: block;color: red";
-                        returnCode = 400;
+                    console.log(rePhone);
+                    if (emailView!='') {
 
-                        return 'Numero de celular incorrecto';
 
-                    } else { 
+                        if (!re.test(emailView)) {
+                            let alert: any = document.getElementById('alert_id');
+                            alert.textContent = "Formato de mail incorrecto";
+                            alert.style = "display: block;color: red";
+                            returnCode = 400;
+
+                            return 'Formato de mail incorrecto';
+
+                        }
+                    } else {
 
                         var client: any = new ClientData();
                         listOfClients.push(client);
