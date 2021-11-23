@@ -606,10 +606,29 @@ video {
 
 
 @media (min-width: 300px) {
+
+  body {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  html, body { min-height: 10%; }
+  body.loading {
+    /*background: #333 url('https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!bw800') no-repeat 50% 20%;
+    */
+    background: #333 url('https://c.tenor.com/JwPW0tw69vAAAAAi/cargando-loading.gif') no-repeat center;
+   
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+    
+  }
+
   .modal {
 
     position:absolute;
-    top: 40%;
+    top: 285%;
     left: 10%;
     width:400px;
     height:400px;
@@ -666,6 +685,25 @@ video {
 
 
 @media (min-width: 640px) {
+
+  body {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  html, body { min-height: 10%; }
+  body.loading {
+    /*background: #333 url('https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!bw800') no-repeat 50% 20%;
+    */
+    background: #333 url('https://c.tenor.com/JwPW0tw69vAAAAAi/cargando-loading.gif') no-repeat 50% 20%;
+   
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+    
+  }
+
   .modal {
 
     position:absolute;
@@ -725,6 +763,24 @@ video {
 }
 
 @media (min-width: 768px) {
+
+  body {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  html, body { min-height: 10%; }
+  body.loading {
+    /*background: #333 url('https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!bw800') no-repeat 50% 20%;
+    */
+    background: #333 url('https://c.tenor.com/JwPW0tw69vAAAAAi/cargando-loading.gif') no-repeat 50% 20%;
+   
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+    
+  }
   .modal {
 
     position:absolute;
@@ -784,6 +840,26 @@ video {
 }
 
 @media (min-width: 1024px) {
+
+
+  body {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  html, body { min-height: 10%; }
+  body.loading {
+    /*background: #333 url('https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!bw800') no-repeat 50% 20%;
+    */
+    background: #333 url('https://c.tenor.com/JwPW0tw69vAAAAAi/cargando-loading.gif') no-repeat 50% 20%;
+   
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+    
+  }
+
   .modal {
 
     position:absolute;
@@ -844,6 +920,25 @@ video {
 }
 
 @media (min-width: 1280px) {
+
+  body {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  html, body { min-height: 10%; }
+  body.loading {
+    /*background: #333 url('https://img.pikbest.com/58pic/35/39/61/62K58PICb88i68HEwVnm5_PIC2018.gif!bw800') no-repeat 50% 20%;
+    */
+    background: #333 url('https://c.tenor.com/JwPW0tw69vAAAAAi/cargando-loading.gif') no-repeat 50% 20%;
+   
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+    opacity: 0;
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+    
+  }
+ 
 
   .modal {
 
@@ -188756,4 +188851,8 @@ progress::-webkit-progress-value {
     padding-top: 25px;
   }
    
+ 
+
+
 }
+

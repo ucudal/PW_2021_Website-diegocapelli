@@ -3,58 +3,64 @@ inputSearch.addEventListener('click', searchUser);
 const inputLoadExp = document.getElementById('loadExp');
 inputLoadExp.addEventListener('click', getDataclient);
 
- /*
+/*
 function getDataclient() {
-  console.log(localStorage.getItem("exp"));
-  const userAction = async () => {
-    const response = await fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/experiencia-laboral');
-    const myJson = await response.json(); //extract JSON from the http response
+ console.log(localStorage.getItem("exp"));
+ const userAction = async () => {
+   const response = await fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/experiencia-laboral');
+   const myJson = await response.json(); //extract JSON from the http response
 
-    var experienceArray = myJson['experiencia-laboral'];
+   var experienceArray = myJson['experiencia-laboral'];
 
-    console.log("estoy aca");
-    buildExperience(experienceArray);
-  }
-  var data = userAction();
+   console.log("estoy aca");
+   buildExperience(experienceArray);
+ }
+ var data = userAction();
 
 }*/
 
 function getDataclient() {
 
-  
-
-   fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/experiencia-laboral' 
-     ).then(response => { 
-      let result = response.json();
-      var exp = document.getElementById('exp');     
-      exp.innerHTML = '';   
-      return result;
+  var body = document.getElementsByTagName('body')[0];
+  var addLoading = function () {
+    
+    setTimeout(function () {
+     body.className = body.className.replace(/loading2/, 'loading');
+     
+    }, 3);
+    setTimeout(function () {
+      body.className = body.className.replace(/loading/, 'loading2');
       
-    }
+     }, 1000);
+     
+  };
+ 
 
-    )
-    .then(data => { 
-       
-    var experienceArray = data['experiencia-laboral'];
-    buildExperience(experienceArray);
+  addLoading();
+
+
+  fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/experiencia-laboral'
+  ).then(response => {
+    let result = response.json();
+    var exp = document.getElementById('exp');
+    exp.innerHTML = '';
+    return result;
+
+  }
+
+  )
+    .then(data => {
+
+      var experienceArray = data['experiencia-laboral'];
+      buildExperience(experienceArray);
 
 
     })
     .catch(data => {
-     
-      console.log("sssssssssssssssss");
-
 
     })
-
+  
 }
-
-
-
-
-
-
-
 
 
 function searchUser() {
@@ -63,7 +69,7 @@ function searchUser() {
 
   var listOfClients2 = JSON.parse(localStorage.getItem("users"))
   let obj = listOfClients2.find(o => o.name === visitor);
-  
+
   let vs = document.getElementById('visitorList');
   vs.style = "display:block";
 
@@ -86,12 +92,12 @@ function searchUser() {
 
 function buildExperience(experienceArray) {
 
- 
+
   for (var indice in experienceArray) {
 
     var exp = document.getElementById('exp');
     console.log("dentro div");
-   console.log(exp);
+    console.log(exp);
     window["titleExperience" + indice] = document.createElement('h3');
     window["titleExperience" + indice].className = 'mb-6';
     window["titleExperience" + indice].textContent = experienceArray[indice].empresa;
@@ -126,7 +132,7 @@ function buildExperience(experienceArray) {
     window["secondSection" + indice].append(window["divSecondSectionTwo" + indice]);
     localStorage.setItem("exp", "yes");
   }
- 
+
 }
 
 

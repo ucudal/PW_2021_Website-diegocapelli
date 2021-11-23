@@ -45,13 +45,29 @@ function addClient() {
         motive: motive
     };
 
-
+    var body = document.getElementsByTagName('body')[0];
+    var addLoading = function () {
+      
+      setTimeout(function () {
+       body.className = body.className.replace(/loading2/, 'loading');
+       
+      }, 3);
+      setTimeout(function () {
+        body.className = body.className.replace(/loading/, 'loading2');
+        
+       }, 500);
+       
+    };
+   
+  
+    addLoading();
+    var returnCode=200;
     fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/enviar-formulario',
         {
             method: "POST",
             headers: {
+                'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
             },
             body: JSON.stringify(data),
 
@@ -65,7 +81,7 @@ function addClient() {
 
             var re = '^\\S+@\\S+$';
             let nameView = (<HTMLInputElement>document.getElementById('name')).value;
-
+            
             if (nameView == '') {
                 let alert: any = document.getElementById('alert_id');
                 alert.textContent = "El campo Nombre es obligatorio";
@@ -81,31 +97,41 @@ function addClient() {
                     alert.style = "display: block;color: red";
 
                 } else {
+                    console.log("agrega");
                     var client: any = new ClientData();
                     listOfClients.push(client);
 
                     localStorage.setItem("users", JSON.stringify(listOfClients));
-                    var result: any = response.json()
-                    return result;
+                    console.log("response");
+                    
+                    
+                    //var rt ={code:response.status,return:res};
+                    //return rt;
                 }
 
             }
-            
+            console.log("retorna error");
+            returnCode=response.status;
             return  response.json();
 
         }
 
         )
         .then(data => { 
-            
+            console.log(data);
             let alert: any = document.getElementById('alert_id');
             alert.textContent = data;
-            alert.style = "display: block;color: green"; 
+            alert.style = "display: block;color: red";
+            if (returnCode==200){
+                alert.style = "display: block;color: green";
+            }
+              
         })
         .catch(data => { 
+            console.log("respuesta ws");
              
             let alert: any = document.getElementById('alert_id');
-            alert.textContent = data.json();
+            alert.textContent ="Error interno,por favor intente mas tarde";
             alert.style = "display: block;color: red"; 
         })
 
@@ -320,16 +346,19 @@ function closeModalHandler() {
 
 }
 function cleanModalHandler() {
-    let name = (<HTMLInputElement>document.getElementById('name')).value;
-    name = "";
-    let lastname= (<HTMLInputElement>document.getElementById('lastname')).value;
-    lastname = "";
-    let email = (<HTMLInputElement>document.getElementById('email')).value ;
-    email = "";
-    let phone = (<HTMLInputElement>document.getElementById('phone')).value;
-    phone = "";
-    let motive =  (<HTMLInputElement>document.getElementById('motive')).value;
-    motive = "";
+    console.log("clean");
+    let name = document.getElementById('name') as HTMLInputElement; 
+    name.value = "";
+    let lastname = document.getElementById('lastname') as HTMLInputElement; 
+    lastname.value = "";
+    let email = document.getElementById('email') as HTMLInputElement; 
+    email.value = "";
+ 
+    let phone = document.getElementById('phone') as HTMLInputElement; 
+    phone.value = "";
+    let motive = document.getElementById('motive') as HTMLInputElement; 
+    motive.value = "";
+   
     let alert:any = document.getElementById('alert_id');
     alert.style = "display: none;color: green";
 

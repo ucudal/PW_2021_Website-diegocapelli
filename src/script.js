@@ -27,11 +27,22 @@ function addClient() {
         phone: phone,
         motive: motive
     };
+    var body = document.getElementsByTagName('body')[0];
+    var addLoading = function () {
+        setTimeout(function () {
+            body.className = body.className.replace(/loading2/, 'loading');
+        }, 3);
+        setTimeout(function () {
+            body.className = body.className.replace(/loading/, 'loading2');
+        }, 500);
+    };
+    addLoading();
+    var returnCode = 200;
     fetch('https://PW2021-APINode-DiegoCapelli.diegocapelli.repl.co/enviar-formulario', {
         method: "POST",
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(data)
     }).then(function (response) {
@@ -56,25 +67,31 @@ function addClient() {
                 alert_2.style = "display: block;color: red";
             }
             else {
+                console.log("agrega");
                 var client = new ClientData();
                 listOfClients.push(client);
                 localStorage.setItem("users", JSON.stringify(listOfClients));
-                var result = response.json();
-                return result;
+                console.log("response");
+                //var rt ={code:response.status,return:res};
+                //return rt;
             }
         }
-        console.log(response.json());
+        console.log("retorna error");
+        returnCode = response.status;
         return response.json();
     })
         .then(function (data) {
         console.log(data);
         var alert = document.getElementById('alert_id');
         alert.textContent = data;
-        alert.style = "display: block;color: green";
+        alert.style = "display: block;color: red";
+        if (returnCode == 200) {
+            alert.style = "display: block;color: green";
+        }
     })["catch"](function (data) {
-        console.log("error acacaca en chact");
+        console.log("respuesta ws");
         var alert = document.getElementById('alert_id');
-        alert.textContent = data.json();
+        alert.textContent = "Error interno,por favor intente mas tarde";
         alert.style = "display: block;color: red";
     });
 }
@@ -225,16 +242,17 @@ function closeModalHandler() {
     backdrop = null;
 }
 function cleanModalHandler() {
-    var name = document.getElementById('name').value;
-    name = "";
-    var lastname = document.getElementById('lastname').value;
-    lastname = "";
-    var email = document.getElementById('email').value;
-    email = "";
-    var phone = document.getElementById('phone').value;
-    phone = "";
-    var motive = document.getElementById('motive').value;
-    motive = "";
+    console.log("clean");
+    var name = document.getElementById('name');
+    name.value = "";
+    var lastname = document.getElementById('lastname');
+    lastname.value = "";
+    var email = document.getElementById('email');
+    email.value = "";
+    var phone = document.getElementById('phone');
+    phone.value = "";
+    var motive = document.getElementById('motive');
+    motive.value = "";
     var alert = document.getElementById('alert_id');
     alert.style = "display: none;color: green";
 }
