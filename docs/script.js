@@ -63,9 +63,10 @@ function searchUser() {
 
   let visitor = document.getElementById('visitorUserName').value;
 
-  var listOfClients2 = JSON.parse(localStorage.getItem("users"))
+  var listOfClients2 = JSON.parse(localStorage.getItem("users"));
+  console.log(listOfClients2);
   let obj = listOfClients2.find(o => o.name === visitor);
-
+  console.log(obj);
   let vs = document.getElementById('visitorList');
   vs.style = "display:block";
 

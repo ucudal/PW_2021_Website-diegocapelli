@@ -77,10 +77,17 @@ function addClient() {
                         returnCode = 400;
                         return 'Formato de mail incorrecto';
                     }
+                    else {
+                        var client = new ClientData();
+                        listOfClients.push(client);
+                        console.log("add user with email");
+                        localStorage.setItem("users", JSON.stringify(listOfClients));
+                    }
                 }
                 else {
                     var client = new ClientData();
                     listOfClients.push(client);
+                    console.log("add user");
                     localStorage.setItem("users", JSON.stringify(listOfClients));
                 }
             }

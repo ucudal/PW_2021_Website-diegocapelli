@@ -92,7 +92,7 @@ function addClient() {
 
                 var re = new RegExp('^\\S+@\\S+$');
                 var rePhone = new RegExp('^\\d*$');
-                
+
                 if (!rePhone.test(phoneView)) {
                     let alert: any = document.getElementById('alert_id');
                     alert.textContent = "Formato de celular incorrecto";
@@ -102,8 +102,8 @@ function addClient() {
                     return 'Numero de celular incorrecto';
 
                 } else {
-                    
-                    if (emailView!='') {
+
+                    if (emailView != '') {
 
 
                         if (!re.test(emailView)) {
@@ -114,11 +114,17 @@ function addClient() {
 
                             return 'Formato de mail incorrecto';
 
+                        } else {
+                            var client: any = new ClientData();
+                            listOfClients.push(client);
+                            console.log("add user with email");
+                            localStorage.setItem("users", JSON.stringify(listOfClients));
                         }
                     } else {
 
                         var client: any = new ClientData();
                         listOfClients.push(client);
+                        console.log("add user");
                         localStorage.setItem("users", JSON.stringify(listOfClients));
                     }
                 }
@@ -132,7 +138,7 @@ function addClient() {
 
         )
         .then(data => {
-           
+
             let alert: any = document.getElementById('alert_id');
             alert.textContent = data;
             alert.style = "display: block;color: red";
@@ -142,7 +148,7 @@ function addClient() {
 
         })
         .catch(data => {
-             
+
             let alert: any = document.getElementById('alert_id');
             alert.textContent = "Error interno,por favor intente mas tarde";
             alert.style = "display: block;color: red";
@@ -154,7 +160,7 @@ button.addEventListener('click', showModalHandler);
 
 function showModalHandler() {
 
-    if (modal) { 
+    if (modal) {
         return;
     }
     buildForm();
@@ -359,7 +365,7 @@ function closeModalHandler() {
 
 }
 function cleanModalHandler() {
-    
+
     let name = document.getElementById('name') as HTMLInputElement;
     name.value = "";
     let lastname = document.getElementById('lastname') as HTMLInputElement;
