@@ -112,7 +112,7 @@ function buildExperience(experienceArray) {
     let fechaFin =  experienceArray[indice].fechaFin;
     console.log(fechaFin);
     const fecha2 = fechaFin.split("T");
-    window["divFirtsSectionOne" + indice].textContent = fecha1[0]+ ' - ' + fecha1[0] ;
+    window["divFirtsSectionOne" + indice].textContent = fecha1[0]+ ' - ' + fecha2[0] ;
     window["divFirtsSectionOne" + indice].style="font-size: 14px;";
     window["divFirtsSectionTwo" + indice] = document.createElement('div');
     window["divFirtsSectionTwo" + indice].className = 'lg:inline-block lg:w-8/12 w-full';
