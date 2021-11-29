@@ -49,27 +49,24 @@ function getDataclient() {
   }
 
   )
-    .then(data => {
-
+    .then(data => { 
       var experienceArray = data['experiencia-laboral'];
-      buildExperience(experienceArray);
-
-
+      buildExperience(experienceArray); 
     })
     .catch(data => {
 
     })
   
 }
-
-
+ 
 function searchUser() {
 
   let visitor = document.getElementById('visitorUserName').value;
 
-  var listOfClients2 = JSON.parse(localStorage.getItem("users"))
+  var listOfClients2 = JSON.parse(localStorage.getItem("users"));
+  console.log(listOfClients2);
   let obj = listOfClients2.find(o => o.name === visitor);
-
+  console.log(obj);
   let vs = document.getElementById('visitorList');
   vs.style = "display:block";
 
@@ -108,7 +105,15 @@ function buildExperience(experienceArray) {
 
     window["divFirtsSectionOne" + indice] = document.createElement('div');
     window["divFirtsSectionOne" + indice].className = 'lg:inline-block lg:w-3/12 lg:align-top italic mb-2';
-    window["divFirtsSectionOne" + indice].textContent = experienceArray[indice].fechaInicio;
+    console.log(experienceArray[indice]);
+    let fechaIn =  experienceArray[indice].fechaInicio;
+    console.log(fechaIn);
+    const fecha1 = fechaIn.split("T");
+    let fechaFin =  experienceArray[indice].fechaFin;
+    console.log(fechaFin);
+    const fecha2 = fechaFin.split("T");
+    window["divFirtsSectionOne" + indice].textContent = fecha1[0]+ ' - ' + fecha2[0] ;
+    window["divFirtsSectionOne" + indice].style="font-size: 14px;";
     window["divFirtsSectionTwo" + indice] = document.createElement('div');
     window["divFirtsSectionTwo" + indice].className = 'lg:inline-block lg:w-8/12 w-full';
     window["divFirtsSectionTwo" + indice].textContent = experienceArray[indice].puesto;

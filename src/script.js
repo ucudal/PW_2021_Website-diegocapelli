@@ -50,7 +50,6 @@ function addClient() {
         var phoneView = document.getElementById('phone').value;
         // var re = new RegExp('/\S+@\S+\.\S+$/');
         //var re = new RegExp('^\\S+@\\S+$');
-        var re = '^\\S+@\\S+$';
         var nameView = document.getElementById('name').value;
         if (nameView == '') {
             var alert_1 = document.getElementById('alert_id');
@@ -60,28 +59,43 @@ function addClient() {
             vs.style = "display:block";
         }
         else {
+            var re = new RegExp('^\\S+@\\S+$');
             var rePhone = new RegExp('^\\d*$');
             if (!rePhone.test(phoneView)) {
                 var alert_2 = document.getElementById('alert_id');
                 alert_2.textContent = "Formato de celular incorrecto";
                 alert_2.style = "display: block;color: red";
+                returnCode = 400;
+                return 'Numero de celular incorrecto';
             }
             else {
-                console.log("agrega");
-                var client = new ClientData();
-                listOfClients.push(client);
-                localStorage.setItem("users", JSON.stringify(listOfClients));
-                console.log("response");
-                //var rt ={code:response.status,return:res};
-                //return rt;
+                if (emailView != '') {
+                    if (!re.test(emailView)) {
+                        var alert_3 = document.getElementById('alert_id');
+                        alert_3.textContent = "Formato de mail incorrecto";
+                        alert_3.style = "display: block;color: red";
+                        returnCode = 400;
+                        return 'Formato de mail incorrecto';
+                    }
+                    else {
+                        var client = new ClientData();
+                        listOfClients.push(client);
+                        console.log("add user with email");
+                        localStorage.setItem("users", JSON.stringify(listOfClients));
+                    }
+                }
+                else {
+                    var client = new ClientData();
+                    listOfClients.push(client);
+                    console.log("add user");
+                    localStorage.setItem("users", JSON.stringify(listOfClients));
+                }
             }
         }
-        console.log("retorna error");
         returnCode = response.status;
         return response.json();
     })
         .then(function (data) {
-        console.log(data);
         var alert = document.getElementById('alert_id');
         alert.textContent = data;
         alert.style = "display: block;color: red";
@@ -89,7 +103,6 @@ function addClient() {
             alert.style = "display: block;color: green";
         }
     })["catch"](function (data) {
-        console.log("respuesta ws");
         var alert = document.getElementById('alert_id');
         alert.textContent = "Error interno,por favor intente mas tarde";
         alert.style = "display: block;color: red";
@@ -119,9 +132,9 @@ function submitModalHandler() {
     //var re = new RegExp('^\\S+@\\S+$');
     if (emailView != '') {
         if (!re.test(emailView)) {
-            var alert_3 = document.getElementById('alert_id');
-            alert_3.textContent = "Error mail incorrecto";
-            alert_3.style = "display: block;color: red";
+            var alert_4 = document.getElementById('alert_id');
+            alert_4.textContent = "Error mail incorrecto";
+            alert_4.style = "display: block;color: red";
             var vs = document.getElementById('visitorList');
             vs.style = "display:block";
         }
@@ -190,17 +203,17 @@ function buildForm() {
     modalText.textContent = 'Ingresa tus datos';
     var modalCancelAction = document.createElement('button');
     modalCancelAction.textContent = 'Cancelar';
-    modalCancelAction.className = 'button cancel';
+    modalCancelAction.className = 'button hover:bg-yellow-700 cancel';
     modalCancelAction.addEventListener('click', closeModalHandler);
     var modalConfirmAction = document.createElement('button');
     modalConfirmAction.textContent = 'Confirmar';
-    modalConfirmAction.className = 'button';
+    modalConfirmAction.className = 'button hover:bg-green-700';
     modalConfirmAction.type = "submit";
     //modalConfirmAction.value = "Submit";
     modalConfirmAction.addEventListener('click', submitModalHandler);
     var modalCleanAction = document.createElement('button');
     modalCleanAction.textContent = 'Resetear';
-    modalCleanAction.className = 'button';
+    modalCleanAction.className = 'button hover:bg-green-700';
     var alertMessage = document.createElement('label');
     alertMessage.textContent = '';
     alertMessage.style = "display: none";
@@ -242,7 +255,6 @@ function closeModalHandler() {
     backdrop = null;
 }
 function cleanModalHandler() {
-    console.log("clean");
     var name = document.getElementById('name');
     name.value = "";
     var lastname = document.getElementById('lastname');
